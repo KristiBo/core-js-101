@@ -269,6 +269,7 @@ function getSecondItems(/* arr */) {
  */
 function propagateItemsByPositionIndex(/* arr */) {
   throw new Error('Not implemented');
+  // if (arr.length < 2) return arr;
 }
 
 
