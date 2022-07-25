@@ -248,8 +248,8 @@ function getMovingSum(/* arr */) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  return arr.filter((el, i) => !!(i % 2));
 }
 
 
@@ -269,7 +269,6 @@ function getSecondItems(/* arr */) {
  */
 function propagateItemsByPositionIndex(/* arr */) {
   throw new Error('Not implemented');
-  // if (arr.length < 2) return arr;
 }
 
 
@@ -304,8 +303,10 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  if (!arr.length) return 0;
+  const res = arr.filter((el) => typeof el === 'number' && el > 0);
+  return res.length;
 }
 
 /**
@@ -321,20 +322,9 @@ function getPositivesCount(/* arr */) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
-  // const obj = {
-  //   0: 'zero',
-  //   1: 'one',
-  //   2: 'two',
-  //   3: 'three',
-  //   4: 'four',
-  //   5: 'five',
-  //   6: 'six',
-  //   7: 'seven',
-  //   8: 'eight',
-  //   9: 'nine',
-  // }
+function sortDigitNamesByNumericOrder(arr) {
+  const num = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  return arr.length ? arr.sort((a, b) => num.indexOf(a) - num.indexOf(b)) : arr;
 }
 
 /**
